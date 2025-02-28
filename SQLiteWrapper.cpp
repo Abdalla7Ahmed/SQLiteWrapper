@@ -446,7 +446,7 @@ void SQLiteWrapper::showTable(const std::string &table_name, const std::string &
     int counter{};
     for (const auto &row : results)
     {
-        std::cout << "Record: " << counter++ << " | ";
+        std::cout << "Record: " << ++counter << " | ";
         for (const auto &col : column_order)
         {
             auto it = row.find(col);
