@@ -107,13 +107,13 @@ return 0;
 ### **Creating a Table**
 ```c++
 db.setTable("Users")
-  .addColumn("ID", "TEXT", SQLiteWrapper::Constraints::PRIMARY_KEY)
+  .addColumn("ID", "INTEGER", SQLiteWrapper::Constraints::PRIMARY_KEY)
   .addColumn("Name", "TEXT", SQLiteWrapper::Constraints::NOT_NULL)
   .addColumn("Age", "INTEGER")
   .createTable();
 // or you can create table like this
 db.setTable("Users");
-addColumn("ID", "TEXT", SQLiteWrapper::Constraints::PRIMARY_KEY);
+addColumn("ID", "INTEGER", SQLiteWrapper::Constraints::PRIMARY_KEY);
 addColumn("Name", "TEXT", SQLiteWrapper::Constraints::NOT_NULL);
 addColumn("Age", "INTEGER");
 createTable();
@@ -154,8 +154,8 @@ db1.insertMultipleRecords({{{"ID", "2"}, {"Name", "Ali"},{"Age", "30"}},
 auto records = db.setTable("Users").fetchTable();
 for (const auto &row : records)
 {
-std::cout << "ID: " << row.at("Topic_ID")<< ", Name: " << row.at("TOPIC_PRICE")
-<< ", Age: " << row.at("TOPIC_Instructor") << "\n";
+std::cout << "ID: " << row.at("ID")<< ", Name: " << row.at("NAME")
+<< ", Age: " << row.at("AGE") << "\n";
 }
 ```
 ![screen](./images/1.4.png)
